@@ -3,14 +3,5 @@
   ...attributes
   {{will-destroy this.handleDestroyElement}}
 >
-  {{
-    yield
-    (hash
-      Container=(component
-        "ember-dragula-container"
-        onInsert=this.addContainer
-        onDestroy=this.removeContainer
-      )
-    )
-  }}
+{{yield}}
 </div>

@@ -80,8 +80,7 @@
     "edition": "octane"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config",
-    "demoURL": "https://zestia.github.io/ember-dragula"
+    "configPath": "tests/dummy/config"
   },
   "homepage": "https://github.com/zestia/ember-dragula"
 }

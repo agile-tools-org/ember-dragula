@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 import { assign } from '@ember/polyfills';
 import { bind } from '@ember/runloop';
 import { action } from '@ember/object';
+import { inject as service } from '@ember/service';
 import dragula from 'dragula';
 
 const { keys } = Object;
@@ -19,35 +20,27 @@ const events = {
 };
 
 export default class EmberDragula extends Component {
+  @service dragula;
+
   static events = events;
 
   constructor() {
     super(...arguments);
-
-    this.drake = dragula(assign({}, this.args.options));
+    
+    this.dragula.drake = dragula(assign({}, this.args.options));
 
     this._setupHandlers();
     this._invokeAction('onReady', this.drake);
   }
 
   @action
-  addContainer(element) {
-    this.drake.containers.push(element);
-  }
-
-  @action
-  removeContainer(element) {
-    this.drake.containers.splice(this.drake.containers.indexOf(element), 1);
-  }
-
-  @action
   handleDestroyElement() {
-    this.drake.destroy();
+    this.dragula.drake.destroy();
   }
 
   _setupHandlers() {
     keys(events).forEach((name) => {
-      this.drake.on(name, bind(this, '_invokeAction', events[name]));
+      this.dragula.drake.on(name, bind(this, '_invokeAction', events[name]));
     });
   }
 

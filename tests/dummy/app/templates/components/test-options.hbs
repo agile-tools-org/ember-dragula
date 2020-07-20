@@ -11,21 +11,21 @@
   @onDrop={{this.dropped}}
   @onDrag={{this.dragged}} as |d|
 >
-  <d.Container class="list list-copy-1">
+  <EmberDragulaContainer class="list list-copy-1">
     {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </EmberDragulaContainer>
 
-  <d.Container class="list list-copy-2">
+  <EmberDragulaContainer class="list list-copy-2">
     {{#each this.listTwo as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </EmberDragulaContainer>
 </EmberDragula>
 
 <h3>
@@ -37,19 +37,19 @@
   @onDrop={{this.dropped}}
   @onDrag={{this.dragged}} as |d|
 >
-  <d.Container class="list list-moves-1">
+  <EmberDragulaContainer class="list list-moves-1">
     {{#each this.listOne as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </EmberDragulaContainer>
 
-  <d.Container class="list list-moves-2">
+  <EmberDragulaContainer class="list list-moves-2">
     {{#each this.listTwo as |item|}}
       <div class="item">
         {{item.name}}
       </div>
     {{/each}}
-  </d.Container>
+  </EmberDragulaContainer>
 </EmberDragula>
