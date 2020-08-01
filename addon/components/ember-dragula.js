@@ -30,7 +30,7 @@ export default class EmberDragula extends Component {
     this.dragula.drake = dragula(assign({}, this.args.options));
 
     this._setupHandlers();
-    this._invokeAction('onReady', this.drake);
+    this._invokeAction('onReady', this.dragula.drake);
   }
 
   @action
